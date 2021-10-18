@@ -3,7 +3,7 @@ import React from 'react';
 
 const Recipe = () => {
     return (
-        <div>
+        <div >
             <h1>Title</h1>
             <p>Calories</p>
             <img src="" alt="" />
@@ -12,4 +12,4 @@ const Recipe = () => {
 };
 
 
-export default Recepie;
+export default Recipe

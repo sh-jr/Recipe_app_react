@@ -12,12 +12,16 @@ const App = () =>{
 
   useEffect(() => {
     getRecipes();
+    
   }, []);
   
   const getRecipes = async () =>{
     const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEYS}`)
     const data = await response.json();
     setRecipes(data.hits);
+    console.log(data.hits)
+    console.log(recipes,"recepti")
+    
   }
 
 
@@ -28,13 +32,12 @@ const App = () =>{
         <input className="search-bar" type="text" />  
         <button className="search-button" type="subbmit">Search</button>
       </form>
-      {recipes.map(recipe => (
-        <Recipe />
+      {recipes.map((recipe, ind) => (
+        <Recipe key={ind}/>
       ))}
     </div>
-
   );
 
 };
 
-export default App;
+export default App
